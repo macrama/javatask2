@@ -1,7 +1,12 @@
-var i=1;
-do{
-    document.write(i+'<br>');
-    (i-1) + (i-2);
-    
+function myFunction(n){
+    var f = [];
+    for(i=0; i<=n ; i++){
+        f.push((i<2) ? i : f[i-1] + f[i-2]);
+    }
+    return f;
 }
-while(i<=89);
+function btnclicked (e) {
+    var n = Number(prompt('please enter your number'));
+    alert(myFunction(n));
+}
+btn.addEventListener('click',btnclicked);
